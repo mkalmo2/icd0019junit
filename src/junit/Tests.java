@@ -2,8 +2,8 @@ package junit;
 
 import org.junit.Test;
 
+import static org.hamcrest.CoreMatchers.*;
 import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.Matchers.*;
 import static org.junit.Assert.*;
 
 public class Tests {
@@ -20,15 +20,17 @@ public class Tests {
 
     @Test
     public void findsSpecialNumbers() {
-        assertFalse(Code.isSpecial(2));
+        assertTrue(Code.isSpecial(0));
+        assertTrue(Code.isSpecial(1));
+        assertTrue(Code.isSpecial(2));
+        assertTrue(Code.isSpecial(3));
+        assertFalse(Code.isSpecial(4));
 
         assertTrue(Code.isSpecial(11));
+        assertFalse(Code.isSpecial(15));
 
-        assertTrue(Code.isSpecial(12));
-
-        assertFalse(Code.isSpecial(13));
-
-        assertTrue(Code.isSpecial(33));
+        assertTrue(Code.isSpecial(36));
+        assertFalse(Code.isSpecial(37));
     }
 
     @Test
@@ -42,6 +44,24 @@ public class Tests {
         assertThat(Code.longestStreak("abbb"), is(3));
 
         assertThat(Code.longestStreak("abbcccaaaad"), is(4));
+    }
+
+    @Test
+    public void findsModeFromCharactersInString() {
+
+        assertThat(Code.mode(null), is(nullValue()));
+
+        assertThat(Code.mode(""), is(nullValue()));
+
+        assertThat(Code.mode("abcb"), is('b'));
+
+        assertThat(Code.mode("cbbc"), is('c'));
+    }
+
+    @Test
+    public void findsCharacterCountInString() {
+        assertThat(Code.getCharacterCount("cbbc", 'b'), is(2));
+        assertThat(Code.getCharacterCount("cbbc", 't'), is(0));
     }
 
     @Test
@@ -62,7 +82,7 @@ public class Tests {
         assertThat(Code.sumIgnoringDuplicates(arrayOf(1, 2, 3)), is(6));
     }
 
-    private Integer[] arrayOf(Integer... numbers) {
+    private int[] arrayOf(int... numbers) {
         return numbers;
     }
 
