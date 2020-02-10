@@ -4,7 +4,7 @@ public class TopSalesFinder {
 
     public String[] findItemsSoldOver(int amount, SalesRecord[] records) {
 
-        // your code goes from here.
+        // your code goes here.
 
         return new String[] {};
     }

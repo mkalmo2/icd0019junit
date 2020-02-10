@@ -4,6 +4,7 @@ import org.junit.Test;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.arrayContainingInAnyOrder;
+import static org.hamcrest.Matchers.emptyArray;
 
 public class TopSalesFinderTests {
 
@@ -14,7 +15,7 @@ public class TopSalesFinderTests {
         assertThat(getItemsSoldOver(39), arrayContainingInAnyOrder("p2", "p3"));
         assertThat(getItemsSoldOver(40), arrayContainingInAnyOrder("p3"));
 
-        assertThat(getItemsSoldOver(50), arrayContainingInAnyOrder());
+        assertThat(getItemsSoldOver(50), emptyArray());
     }
 
     private String[] getItemsSoldOver(int amount) {
