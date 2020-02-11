@@ -21,29 +21,15 @@ public class Tests {
     @Test
     public void findsSpecialNumbers() {
         assertTrue(Code.isSpecial(0));
-        assertTrue(Code.isSpecial(1));
-        assertTrue(Code.isSpecial(2));
-        assertTrue(Code.isSpecial(3));
-        assertFalse(Code.isSpecial(4));
 
-        assertTrue(Code.isSpecial(11));
-        assertFalse(Code.isSpecial(15));
-
-        assertTrue(Code.isSpecial(36));
-        assertFalse(Code.isSpecial(37));
+        // other test cases for isSpecial() method
     }
 
     @Test
     public void findsLongestStreak() {
         assertThat(Code.longestStreak(""), is(0));
 
-        assertThat(Code.longestStreak("a"), is(1));
-
-        assertThat(Code.longestStreak("abc"), is(1));
-
-        assertThat(Code.longestStreak("abbb"), is(3));
-
-        assertThat(Code.longestStreak("abbcccaaaad"), is(4));
+        // other test cases for longestStreak() method
     }
 
     @Test
@@ -51,17 +37,7 @@ public class Tests {
 
         assertThat(Code.mode(null), is(nullValue()));
 
-        assertThat(Code.mode(""), is(nullValue()));
-
-        assertThat(Code.mode("abcb"), is('b'));
-
-        assertThat(Code.mode("cbbc"), is('c'));
-    }
-
-    @Test
-    public void findsCharacterCountInString() {
-        assertThat(Code.getCharacterCount("cbbc", 'b'), is(2));
-        assertThat(Code.getCharacterCount("cbbc", 't'), is(0));
+        // other test cases for mode() method
     }
 
     @Test
