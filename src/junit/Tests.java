@@ -44,7 +44,7 @@ public class Tests {
     public void removesDuplicates() {
         assertThat(Code.removeDuplicates(arrayOf(1, 1)), is(arrayOf(1)));
 
-        assertThat(Code.removeDuplicates(arrayOf(1, 2, 1, 2)), is(arrayOf(1, 2)));
+        assertThat(Code.removeDuplicates(arrayOf(1, 2, 1, 3, 2)), is(arrayOf(1, 2, 3)));
 
         assertThat(Code.removeDuplicates(arrayOf(1, 2, 3)), is(arrayOf(1, 2, 3)));
     }
@@ -53,7 +53,7 @@ public class Tests {
     public void sumsIgnoringDuplicates() {
         assertThat(Code.sumIgnoringDuplicates(arrayOf(1, 1)), is(1));
 
-        assertThat(Code.sumIgnoringDuplicates(arrayOf(1, 2, 1, 2)), is(3));
+        assertThat(Code.sumIgnoringDuplicates(arrayOf(1, 2, 1, 3, 2)), is(6));
 
         assertThat(Code.sumIgnoringDuplicates(arrayOf(1, 2, 3)), is(6));
     }
