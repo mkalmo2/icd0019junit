@@ -47,6 +47,9 @@ public class Tests {
         assertThat(Code.removeDuplicates(arrayOf(1, 2, 1, 3, 2)), is(arrayOf(1, 2, 3)));
 
         assertThat(Code.removeDuplicates(arrayOf(1, 2, 3)), is(arrayOf(1, 2, 3)));
+
+        assertThat(Code.removeDuplicates(arrayOf(100, 0, 3, 100, 0, 4, 562, 4)),
+                is(arrayOf(100, 0, 3, 4, 562)));
     }
 
     @Test
