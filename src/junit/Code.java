@@ -2,23 +2,23 @@ package junit;
 
 public class Code {
 
-    public static boolean isSpecial(int number) {
+    public static boolean isSpecial(int candidate) {
         return false;
     }
 
-    public static int longestStreak(String input) {
+    public static int longestStreak(String inputString) {
         return 0;
     }
 
-    public static Character mode(String input) {
+    public static Character mode(String inputString) {
         return null;
     }
 
-    public static int getCharacterCount(String input, char c) {
+    public static int getCharacterCount(String allCharacters, char targetCharacter) {
         return 0;
     }
 
-    public static int[] removeDuplicates(int[] input) {
+    public static int[] removeDuplicates(int[] integers) {
         return null;
     }
 

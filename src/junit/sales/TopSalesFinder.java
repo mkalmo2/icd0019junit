@@ -2,11 +2,19 @@ package junit.sales;
 
 public class TopSalesFinder {
 
-    public String[] findItemsSoldOver(int amount, SalesRecord[] records) {
+    public void registerSale(SalesRecord record) {
 
-        // your code goes here.
+        // store sales record for later analyses by findItemsSoldOver()
 
-        return new String[] {};
     }
+
+    public String[] findItemsSoldOver(int amount) {
+
+        // find ids of records that sold over specified amount.
+
+        return new String[0];
+    }
+
 }
+
 
