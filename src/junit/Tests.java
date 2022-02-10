@@ -6,6 +6,7 @@ import static org.hamcrest.CoreMatchers.*;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.junit.Assert.*;
 
+@SuppressWarnings("PMD")
 public class Tests {
 
     @Test
