@@ -2,9 +2,9 @@ package junit.sales;
 
 public class SalesRecord {
 
-    private String productId;
-    private int productPrice;
-    private int itemsSold;
+    private final String productId;
+    private final int productPrice;
+    private final int itemsSold;
 
     public SalesRecord(String productId, int productPrice, int itemsSold) {
         this.productId = productId;

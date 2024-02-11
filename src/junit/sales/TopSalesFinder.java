@@ -15,6 +15,11 @@ public class TopSalesFinder {
         return new String[0];
     }
 
+    public void removeSalesRecordsFor(String id) {
+
+        // removes records with specified id
+    }
+
 }
 
 

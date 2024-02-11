@@ -33,6 +33,46 @@ public class TopSalesFinderTests {
     }
 
     @Test
+    public void canRemoveSalesRecords() {
+
+        TopSalesFinder tsf = new TopSalesFinder();
+        tsf.registerSale(new SalesRecord("p1", 5, 1));
+        tsf.registerSale(new SalesRecord("p2", 20, 1));
+        tsf.registerSale(new SalesRecord("p2", 10, 2));
+        tsf.registerSale(new SalesRecord("p1", 4, 1));
+        tsf.registerSale(new SalesRecord("p3", 50, 1));
+        tsf.registerSale(new SalesRecord("p4", 2, 8));
+
+        tsf.removeSalesRecordsFor("p2");
+
+        assertThat(tsf.findItemsSoldOver(10),
+                arrayContainingInAnyOrder("p3", "p4"));
+
+        assertThat(tsf.findItemsSoldOver(40),
+                arrayContainingInAnyOrder("p3"));
+
+        assertThat(tsf.findItemsSoldOver(50),
+                emptyArray());
+    }
+
+    @Test
+    public void removeShouldNotWasteMemory() {
+        TopSalesFinder tsf = new TopSalesFinder();
+        for (int i = 0; i < 10_000_000; i++) {
+            tsf.registerSale(new SalesRecord("p1", 20, 1));
+
+            if (i % 100_000 == 0) {
+                tsf.registerSale(new SalesRecord("p2", 1, 1));
+            }
+
+            tsf.removeSalesRecordsFor("p1");
+        }
+
+        assertThat(tsf.findItemsSoldOver(90),
+                arrayContainingInAnyOrder("p2"));
+    }
+
+    @Test
     public void findTopSalesFromGeneratedData() {
 
         TopSalesFinder tsf = new TopSalesFinder();

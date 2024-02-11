@@ -6,18 +6,7 @@ import static org.hamcrest.CoreMatchers.*;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.junit.Assert.*;
 
-@SuppressWarnings("PMD")
-public class Tests {
-
-    @Test
-    public void equalityExamples() {
-
-    }
-
-    @Test
-    public void assertThatAndAssertEqualsExample() {
-
-    }
+public class MainTests {
 
     @Test
     public void findsSpecialNumbers() {
