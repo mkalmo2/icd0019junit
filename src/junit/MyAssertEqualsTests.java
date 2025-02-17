@@ -1,8 +1,10 @@
 package junit;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
+
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class MyAssertEqualsTests {
 
@@ -11,9 +13,10 @@ public class MyAssertEqualsTests {
         myAssertEquals(1, 1);
     }
 
-    @Test(expected = AssertionError.class)
+    @Test
     public void testsPrimitiveEqualityFailure() {
-        myAssertEquals(1, 2);
+        assertThrows(AssertionError.class,
+                () -> myAssertEquals(1, 2));
     }
 
     @Test
@@ -21,9 +24,10 @@ public class MyAssertEqualsTests {
         myAssertEquals(200L, 200L);
     }
 
-    @Test(expected = AssertionError.class)
+    @Test
     public void testsObjectEqualityFailure() {
-        myAssertEquals(100L, 200L);
+        assertThrows(AssertionError.class,
+                () -> myAssertEquals(100L, 200L));
     }
 
     @Test
@@ -34,28 +38,31 @@ public class MyAssertEqualsTests {
         myAssertEquals(a, b);
     }
 
-    @Test(expected = AssertionError.class)
+    @Test
     public void testsArrayEqualityFailure1() {
         int[] a = {1, 2};
         int[] b = {1};
 
-        myAssertEquals(a, b);
+        assertThrows(AssertionError.class,
+                () -> myAssertEquals(a, b));
     }
 
-    @Test(expected = AssertionError.class)
+    @Test
     public void testsArrayEqualityFailure2() {
         int[] a = {};
         int[] b = {1};
 
-        myAssertEquals(a, b);
+        assertThrows(AssertionError.class,
+                () -> myAssertEquals(a, b));
     }
 
-    @Test(expected = AssertionError.class)
+    @Test
     public void testsArrayEqualityFailure3() {
         int[] a = {1, 2};
         int[] b = {1, 3};
 
-        myAssertEquals(a, b);
+        assertThrows(AssertionError.class,
+                () -> myAssertEquals(a, b));
     }
 
 
@@ -69,10 +76,14 @@ public class MyAssertEqualsTests {
     }
 
     public void myAssertEquals(Long expected, Long actual) {
-        throw new AssertionError("not implemented yet");
+        throw new RuntimeException("not implemented yet");
     }
 
     public void myAssertEquals(int[] expected, int[] actual) {
-        throw new AssertionError("not implemented yet");
+        String message = "%s is not equal to %s"
+                .formatted(Arrays.toString(actual),
+                        Arrays.toString(expected));
+
+        throw new RuntimeException("not implemented yet");
     }
 }

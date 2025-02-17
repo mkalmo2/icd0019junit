@@ -1,17 +1,21 @@
 package junit;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-import static org.hamcrest.CoreMatchers.is;
-import static org.hamcrest.CoreMatchers.not;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertThat;
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 
 public class AssertTests {
 
     @Test
     public void testsAssertEqualsOrder() {
         assertEquals(sum(1, 2), 4);
+    }
+
+    @Test
+    public void testsAssertThatOrder() {
+        assertThat(4).isEqualTo(sum(1, 2));
     }
 
     @Test
@@ -23,16 +27,11 @@ public class AssertTests {
     }
 
     @Test
-    public void testsAssertThatOrder() {
-        assertThat(4, is(sum(1, 2)));
-    }
-
-    @Test
     public void testsAssertThatArray() {
         int[] a = {1, 2};
         int[] b = {1, 2};
 
-        assertThat(a, is(b));
+        assertThat(a).isEqualTo(b);
     }
 
     @Test
@@ -40,28 +39,19 @@ public class AssertTests {
         int[] a = {1, 2};
         int[] b = {1, 3};
 
-        assertThat(a, is(not(b)));
+        assertThat(a).isNotEqualTo(b);
     }
 
     @Test
-    public void testsAssertThatTypes() {
-        assertThat(pow(2, 3), is(8.0));
+    public void equalityAndToStringAreDifferentThings() {
+        Point a = new Point(1, 2);
+        Point b = new Point(1, 2);
+
+        assertThat(a).isEqualTo(a);
+
+        // possibly unexpected result and error message
+        assertThat(a).isEqualTo(b);
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -85,16 +75,4 @@ public class AssertTests {
         return a + b;
     }
 
-    private Object pow(int a, int b) {
-        double result = Math.pow(a, b);
-        // It is not important what this code actually does.
-        // This example highlights potential misunderstandings.
-        // Similar appearance doesn't guarantee equivalence.
-        return new Object() {
-            @Override
-            public String toString() {
-                return String.valueOf(result);
-            }
-        };
-    }
 }

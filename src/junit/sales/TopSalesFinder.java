@@ -8,11 +8,18 @@ public class TopSalesFinder {
 
     }
 
-    public String[] findItemsSoldOver(int amount) {
+    public SalesRecord[] getAllRecordsPaged(int start, int count) {
+
+        // return a slice of all stored records
+
+        return new SalesRecord[0];
+    }
+
+    public SalesRecordResult[] findItemsSoldOver(int amount) {
 
         // find ids of records that sold over specified amount.
 
-        return new String[0];
+        return new SalesRecordResult[0];
     }
 
     public void removeSalesRecordsFor(String id) {
