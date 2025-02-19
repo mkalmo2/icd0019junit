@@ -1,11 +1,13 @@
 package junit.sales;
 
-public record SalesRecord(String productId,
-                          String productName,
+import java.util.UUID;
+
+public record SalesRecord(UUID recordId, // only needed for the sample application
+                          String productId,
                           int productPrice,
                           int itemsSold) {
 
     public SalesRecord(String productId, int productPrice, int itemsSold) {
-        this(productId, productId, productPrice, itemsSold);
+        this(UUID.randomUUID(), productId, productPrice, itemsSold);
     }
 }

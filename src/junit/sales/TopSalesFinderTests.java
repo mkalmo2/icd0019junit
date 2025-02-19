@@ -116,13 +116,13 @@ public class TopSalesFinderTests {
         assertThat(firstPage[0].productId()).isEqualTo("p1");
         assertThat(firstPage[1].productId()).isEqualTo("p2");
 
-        SalesRecord[] secondPage = tsf.getAllRecordsPaged(2, 2);
+        SalesRecord[] secondPage = tsf.getAllRecordsPaged(1, 2);
 
         assertThat(secondPage.length).isEqualTo(2);
         assertThat(secondPage[0].productId()).isEqualTo("p3");
         assertThat(secondPage[1].productId()).isEqualTo("p4");
 
-        SalesRecord[] thirdPage = tsf.getAllRecordsPaged(4, 2);
+        SalesRecord[] thirdPage = tsf.getAllRecordsPaged(2, 2);
 
         assertThat(thirdPage.length).isEqualTo(1);
         assertThat(thirdPage[0].productId()).isEqualTo("p5");

@@ -8,13 +8,6 @@ public class TopSalesFinder {
 
     }
 
-    public SalesRecord[] getAllRecordsPaged(int start, int count) {
-
-        // return a slice of all stored records
-
-        return new SalesRecord[0];
-    }
-
     public SalesRecordResult[] findItemsSoldOver(int amount) {
 
         // find ids of records that sold over specified amount.
@@ -25,6 +18,27 @@ public class TopSalesFinder {
     public void removeSalesRecordsFor(String id) {
 
         // removes records with specified id
+    }
+
+    public SalesRecord[] getAllRecordsPaged(int pageNumber, int pageSize) {
+
+        // return a slice of all stored records
+
+        return new SalesRecord[0];
+    }
+
+    public int getRecordCount() {
+        // only needed for the sample application
+
+        // returns the count of all records
+
+        return 0;
+    }
+
+    public void removeRecord(String id) {
+        // only needed for the sample application
+
+        // removes record with specific id
     }
 
 }
