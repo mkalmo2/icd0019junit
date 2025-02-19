@@ -41,10 +41,10 @@ public class MainTests {
 
         assertThat(Code.removeDuplicates(arrayOf(1, 2, 1, 3, 2))).isEqualTo(arrayOf(1, 2, 3));
 
-        assertThat(Code.removeDuplicates(arrayOf(1, 2, 3))).isEqualTo((arrayOf(1, 2, 3)));
+        assertThat(Code.removeDuplicates(arrayOf(1, 2, 3))).isEqualTo(arrayOf(1, 2, 3));
 
         assertThat(Code.removeDuplicates(arrayOf(100, 0, 3, 100, 0, 4, 562, 4)))
-                .isEqualTo((arrayOf(100, 0, 3, 4, 562)));
+                .isEqualTo(arrayOf(100, 0, 3, 4, 562));
     }
 
     @Test
