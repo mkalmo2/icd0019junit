@@ -82,10 +82,10 @@
 
    Vajalikud on järgmised testid:
    
-     ```null``` annab ```null```
-     ```""``` annab ```null```
-     ```"abcb"``` annab ```'b'```
-   ```"cbbc"``` annab ```'c'```
+     ```null``` annab ```null```<br>
+     ```""``` annab ```null```<br>
+     ```"abcb"``` annab ```'b'```<br>
+   ```"cbbc"``` annab ```'c'```<br>
 
    Viimane juht ütleb, et kui on kaks sama palju esinevat sümbolit, siis 
    peaks valima selle, milline sümbol esimesena esines. Kui teie senine 
@@ -101,10 +101,10 @@
    
    Vajalikud on järgmised testid:
    
-     ```""``` annab ```0```
-     ```"a"``` annab ```1```
-     ```"abbcccaaaad"``` annab ```4```
-     ```"abbcccaaaa"``` annab ```4```     
+     ```""``` annab ```0```<br>
+     ```"a"``` annab ```1```<br>
+     ```"abbcccaaaad"``` annab ```4```<br>
+     ```"abbcccaaaa"``` annab ```4```<br>
    
    Kuidas stringist sümboleid saada:
    
@@ -122,8 +122,7 @@
    Kui sisendis on mõni element mitmekordselt (ei pea olema järjest), 
    siis on väljundist kordused eemaldatud.
    
-   ```new int[] {1, 1}``` annab ```new int[] {1}```
-   
+   ```new int[] {1, 1}``` annab ```new int[] {1}```<br>
    ```new int[] {1, 2, 1, 3, 2}``` annab ```new int[] {1, 2, 3}```
    
    NB! List-i, Set-i või muid dünaamilisi kollektsioone ei tohi kasutada. 
@@ -144,9 +143,8 @@
    massiivi elementide summa. Kui mõni element on mitmekordselt, siis
    teist korda seda summasse ei panda.
    
-   ```new int[] {1, 1}``` annab vastuse ```1```
-   
-   ```new int[] {1, 2, 1, 2}``` annab vastuse ```3```
+   ```new int[] {1, 1}``` annab vastuse ```1```<br>
+   ```new int[] {1, 2, 1, 2}``` annab vastuse ```3```<br>
 
 10. Commit-ige muudatused ja push-ige need Github'i. 
     
