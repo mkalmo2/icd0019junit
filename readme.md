@@ -30,11 +30,11 @@
    
    Java konstruktsioon 
       
-      throw new AssertionError("some message");
+      ```throw new AssertionError("some message");```
    
    on erindi viskamine, mis on analoogiline allolevale Püütoni koodile
    
-      raise Exception('some message')
+      ```raise Exception('some message')```
    
    Erinditest on edaspidises loengus põhjalikumalt juttu aga lühidalt 
    tähendab see programmis tahtlikult vea tekitamist.
@@ -82,10 +82,10 @@
 
    Vajalikud on järgmised testid:
    
-     null annab null
-     "" annab null
-     "abcb" annab 'b'
-     "cbbc" annab 'c'
+     ```null``` annab ```null```
+     ```""``` annab ```null```
+     ```"abcb"``` annab ```'b'```
+   ```"cbbc"``` annab ```'c'```
 
    Viimane juht ütleb, et kui on kaks sama palju esinevat sümbolit, siis 
    peaks valima selle, milline sümbol esimesena esines. Kui teie senine 
@@ -101,10 +101,10 @@
    
    Vajalikud on järgmised testid:
    
-     "" annab 0
-     "a" annab 1
-     "abbcccaaaad" annab 4
-     "abbcccaaaa" annab 4     
+     ```""``` annab ```0```
+     ```"a"``` annab ```1```
+     ```"abbcccaaaad"``` annab ```4```
+     ```"abbcccaaaa"``` annab ```4```     
    
    Kuidas stringist sümboleid saada:
    
@@ -144,9 +144,9 @@
    massiivi elementide summa. Kui mõni element on mitmekordselt, siis
    teist korda seda summasse ei panda.
    
-   ```new int[] {1, 1}``` annab vastuse 1
+   ```new int[] {1, 1}``` annab vastuse ```1```
    
-   ```new int[] {1, 2, 1, 2}``` annab vastuse 3
+   ```new int[] {1, 2, 1, 2}``` annab vastuse ```3```
 
 10. Commit-ige muudatused ja push-ige need Github'i. 
     
@@ -157,23 +157,23 @@
 
 11. Kui see ülesanne jääb tegemata, siis saate maksimaalse nelja punkti 
     asemel kaks. Seega selle korra ülesanded loetakse esitatuks ka ilma 
-    selleta. Kui see jääb tegemata saate lihtsalt kaks punkti vähem.<br><br>
+    selleta. Kui see jääb tegemata saate lihtsalt kaks punkti vähem.<br>
     
     Kirjutage meetod, mis leiab müügi andmete hulgast need tooted, mille 
-    müügitulu on suurem etteantud väärtusest.<br><br>
+    müügitulu on suurem etteantud väärtusest.<br>
     
     Müüdud toodete infot sisestatakse jooksvalt ja igal hetkel saab küsida, 
     millised on seni enim müünud tooted. Ühe müügi kirje, sisaldab toote
-    identifikaatorit, hinda ja müüdud kogust.<br><br>
+    identifikaatorit, hinda ja müüdud kogust.<br>
     
     Meetod removeSalesRecordsFor(<product id>) eemaldab identifikaatori põhjal 
-    kõik seni lisatud selle identifikaatoriga tooted.<br><br>
+    kõik seni lisatud selle identifikaatoriga tooted.<br>
     
     Meetod getAllRecordsPaged(<pageNumber>, <pageSize>) tagastab kõigi sisestatud 
     kirjetest ühe lõigu (slice). See meetod on vajalik kõigi toodete vaatamiseks
-    lehekülgede kaupa.<br><br>
+    lehekülgede kaupa.<br>
     
-    Klassis TopSalesFinderTests on testid, mis peaks selgitama, kuidas kood käituma peaks.<br><br>  
+    Klassis TopSalesFinderTests on testid, mis peaks selgitama, kuidas kood käituma peaks.<br>  
     
     Piirangud
       - Dünaamilisi kollektsioone (nt. ArrayList()) kasutada ei tohi.
